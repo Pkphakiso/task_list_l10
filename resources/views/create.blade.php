@@ -1,5 +1,12 @@
 @extends('layouts.app')
 @section('title', "Add Task")
+@section('styles')
+    <style>
+        .error_para{
+            color: red;
+        }
+    </style>
+@endsection
     
 @section('contents')
 
@@ -12,7 +19,7 @@
             </label>
             <input type="text" name="title" id="title" />
             @error('title')
-                <p>{{ $message}}</p>
+                <p class="error_para">{{ $message}}</p>
             @enderror
         </div>
         
@@ -22,7 +29,7 @@
             </label>
             <textarea name="description" id="description" rows="5"></textarea>
             @error('description')
-                <p>{{ $message}}</p>
+                <p class="error_para">{{ $message}}</p>
             @enderror
         </div>
         <div>
@@ -31,7 +38,7 @@
             </label>
             <textarea name="long_description" id="long_description" rows="10"></textarea>
             @error('long_description')
-                <p>{{ $message}}</p>
+                <p class="error_para">{{ $message}}</p>
             @enderror
         </div>
 

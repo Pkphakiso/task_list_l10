@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Laravel 10 tast list app</title>
+        @yield('styles')
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
