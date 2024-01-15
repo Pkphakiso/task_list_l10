@@ -3,6 +3,7 @@
     
 @section('contents')
 
+    {{-- {{$errors}} --}}
     <form action="{{route('tasks.store')}}" method="POST">
         @csrf
         <div>
@@ -10,6 +11,9 @@
                 Title
             </label>
             <input type="text" name="title" id="title" />
+            @error('title')
+                <p>{{ $message}}</p>
+            @enderror
         </div>
         
         <div>
@@ -17,14 +21,20 @@
                 description
             </label>
             <textarea name="description" id="description" rows="5"></textarea>
+            @error('description')
+                <p>{{ $message}}</p>
+            @enderror
         </div>
         <div>
             <label for="long_description">
                 long description
             </label>
             <textarea name="long_description" id="long_description" rows="10"></textarea>
+            @error('long_description')
+                <p>{{ $message}}</p>
+            @enderror
         </div>
-        
+
         <div>
             <button type="submit">Add task</button>
         </div>
