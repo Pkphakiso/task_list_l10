@@ -23,7 +23,8 @@ Route::get("/", function () {
 
 Route::get('/tasks', function (){
     return view('index',[
-        "tasks"=> Task::latest()->get()
+        "tasks"=> Task::latest()->paginate()
+        //"tasks"=> Task::latest()->paginate(5)  //5 indicate the number of item to display per page
         // "tasks"=> \App\Models\Task::latest()->where("completed",true)->get()
        // "tasks"=> \App\Models\Task::all()
     ]);
