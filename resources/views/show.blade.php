@@ -36,7 +36,7 @@
             @method('PUT')
             <button type="submit" 
                 class="btn">
-                Mark as {{ $task->complete ? 'not completted' : 'completed'}}
+                Mark as {{ $task->completed ? 'not completted' : 'completed' }}
             </button>
         </form>
     
